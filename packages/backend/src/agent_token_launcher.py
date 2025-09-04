@@ -129,7 +129,7 @@ class AgentTokenLauncher:
             if balance < required:
                 print(f"Insufficient MockAID. Have: {Web3.from_wei(balance, 'ether')}, Need: {Web3.from_wei(required, 'ether')}")
                 
-                # Mint more MockAID (for testing)
+                # Mint more mAID
                 mint_amount = required - balance + Web3.to_wei(100, 'ether')  # Extra buffer
                 print(f"Minting {Web3.from_wei(mint_amount, 'ether')} MockAID...")
                 
@@ -154,7 +154,7 @@ class AgentTokenLauncher:
                 
                 print(f"Minted MockAID successfully: {tx_hash.hex()}")
             
-            # Approve Bonding contract to spend MockAID (approve large amount for multiple launches)
+            # Approve Bonding contract to spend mAID
             print("Approving Bonding contract to spend MockAID...")
             nonce = self.w3.eth.get_transaction_count(self.account.address)
             approve_amount = Web3.to_wei(1000000, 'ether')  # Approve 1M MockAID for multiple launches
@@ -233,7 +233,7 @@ class AgentTokenLauncher:
                 print(f"Launch transaction failed")
                 return None
             
-            print(f"✅ Agent token launched successfully!")
+            print(f"Agent token launched successfully!")
             print(f"Transaction: {tx_hash.hex()}")
             
             # Parse events to get token address (would need event ABI)
