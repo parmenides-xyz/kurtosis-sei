@@ -322,16 +322,16 @@ async def trading_loop(traders, proposal_ids):
                 print(f"Market graduated with winning proposal: {winning_proposal}")
                 
                 # Launch agent token
-                print("\n🚀 Launching agent token...")
+                print("\nLaunching agent token...")
                 launcher = AgentTokenLauncher()
                 launch_result = await launcher.launch_agent_token(market_id)
                 
                 if launch_result:
-                    print(f"✅ Agent token launched successfully!")
+                    print(f"Agent token launched successfully!")
                     print(f"  Token: {launch_result['agent_name']} ({launch_result['ticker']})")
                     print(f"  Transaction: {launch_result['tx_hash']}")
                 else:
-                    print("❌ Failed to launch agent token")
+                    print("Failed to launch agent token")
             break
         
         # Pick random trader and proposal (70% chance to pick focus proposals)
@@ -419,7 +419,7 @@ async def main():
     print("="*50)
     
     # Show AI market conditions that will influence trading
-    print("\n📊 AI Market Analysis (from Allora Network):")
+    print("\nAI Market Analysis (from Allora Network):")
     from src.traders.allora_personalities import get_ai_token_predictions
     try:
         ai_predictions = await get_ai_token_predictions()
@@ -484,7 +484,7 @@ async def main():
             print(f"  Created {i} traders...")
     
     # Show personality distribution
-    print(f"\n📊 Trader Personality Distribution:")
+    print(f"\nTrader Personality Distribution:")
     for name, count in sorted(personality_counts.items(), key=lambda x: x[1], reverse=True):
         print(f"  {name}: {count} trader{'s' if count > 1 else ''}")
     
