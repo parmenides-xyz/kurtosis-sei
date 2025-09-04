@@ -371,20 +371,3 @@ cd packages/contracts
 forge install https://github.com/Sofianel5/v3-periphery
 forge build
 ```
-
-## Future Improvements
-
-### Planned Features
-- Multi-market simultaneous trading
-- Cross-market arbitrage strategies
-- Dynamic personality evolution based on performance
-- Integration with more AI prediction sources
-- Mainnet deployment with real USDC
-- Governance token for parameter adjustments
-
-### Research Directions
-- Optimal TWAP window duration
-- Game-theoretic analysis of trader strategies
-- MEV-resistant graduation mechanisms
-- Sybil-resistant proposal generation
-- Dynamic fee structures based on market volatility
