@@ -644,6 +644,3 @@ class TraderAgent:
         market = self.w3.eth.contract(address=self.market_address, abi=market_abi)
         max_data = market.functions.marketMax(market_id).call()
         return {"yesPrice": max_data[0], "proposalId": max_data[1]}
-    
-    # Agent token functions removed - will be handled separately
-    # The market now only handles graduation, not token launches
